@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    padding: 15px 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #C080FF;
+}
+
+.navbar .logo a{
+    color: #101010;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a{
+    color: #101010;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: all 0.1s ease;
+    text-decoration: none;
+}
+
+.navbar .menu li a:hover{
+    color: #101010;
+    border-bottom: 3px solid #101010;
+}
+
+.navbar .log li .nav-link{
+    color: #101010;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.home{
+    display: flex;
+    background: url("/public/img/h-image6.jpg") no-repeat center;
+    height: 100vh;
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.home .max-width{
+    margin: auto 0 auto 40px;
+}
+
+.home .home-content .text-1{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+    color: #C080FF; /* #B3A46B */
+    text-shadow: 1px 1px black;
+}
+
+.home .home-content .text-2{
+    font-size: 40px;
+    margin: 5px 0;
+}
+
+
+.pad-sect{
+    padding-top: 5rem;
+}

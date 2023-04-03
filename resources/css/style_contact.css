@@ -1,0 +1,32 @@
+.contact-content div{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+
+.contact-info div{
+    display: block;
+    align-items: center;
+}
+
+.contact-info h1{
+    margin-bottom: 1rem;
+}
+
+.contact-info .contact-subtitle{
+    margin-top: 2rem;
+}
+
+.contact-info p{
+    font-weight: 400;
+}
+
+.contact-info .contact-address, .contact-tel, .contact-email{
+    margin: 0.5rem 0;
+}
+
+#map {
+	height: 500px;
+	width: 50%;
+}

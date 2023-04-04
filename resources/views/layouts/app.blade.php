@@ -32,9 +32,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav menu me-auto">
-                        <li><a href="{{url('/')}}">home</a></li>
+                        <li><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{ url('/servicios') }}">Servicios</a></li>
-                        <li><a href="{{ url('/store') }}">Productos</a></li>
+                        <li><a href="{{ url('/products/index') }}">Productos</a></li>
                         <li><a href="#">¡Agenda una cita!</a></li>
                         <li><a href="{{ url('/contacto') }}">Contacto</a></li>
                         <li><a href="#">Nosotros</a></li>
@@ -66,6 +66,10 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
+                                    </a>
+
+                                    <a class="dropdown-item" href=" {{ route('user.edit', Auth::user()->id) }}">
+                                        Perfil
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

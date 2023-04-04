@@ -23,9 +23,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/create', [App\Http\Controllers\UserController::class, 'create'])->name('createUser');
 
-Route::get('/store', function () {
-    return view('product.product');
-})->name('store');
+Route::get('/products/index', [App\Http\Controllers\ProductController::class, 'index'])->name('product.index');
+
+Route::get('products/create', [App\Http\Controllers\ProductController::class, 'create'])->name('product.create');
 
 Route::get('/servicios', function () {
     return view('services');
@@ -34,3 +34,7 @@ Route::get('/servicios', function () {
 Route::get('/contacto', function () {
     return view('contact');
 })->name('contact');
+
+// Routes for user
+
+Route::get('/user/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');

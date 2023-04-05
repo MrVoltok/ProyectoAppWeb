@@ -13,7 +13,7 @@
                     <img src="../img/product_1.jpg" alt="">
                     <div class="product-info">
                         <p class="product-name">{{ $products[$i]->name }}</p>
-                        <p class="price">{{ $products[$i]->precio }}</p>
+                        <p class="price">${{ $products[$i]->precio }}</p>
                     </div>
                 </li>
             @endfor

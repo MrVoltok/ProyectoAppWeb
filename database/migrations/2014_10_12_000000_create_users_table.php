@@ -21,10 +21,13 @@ return new class extends Migration
             $table->string('password');
             $table->string('apellidoP')->nullable(false)->default('');
             $table->string('apellidoM')->nullable(false)->default('');
+            $table->string('calle')->nullable(false)->default('');
+            $table->string('colonia')->nullable(false)->default('');
             $table->string('username')->nullable(false)->default('');
             $table->string('numCel')->nullable(false)->default('');
             $table->string('numTel')->nullable(false)->default('');
             $table->string('statusFreq')->nullable(false)->default('');
+            $table->string('codPostal')->nullable(false)->default('');
             $table->rememberToken();
             $table->timestamps();
         });

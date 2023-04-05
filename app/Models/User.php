@@ -27,6 +27,9 @@ class User extends Authenticatable
         'numCel',
         'numTel',
         'statusFreq',
+        'codPostal',
+        'calle',
+        'colonia'
     ];
 
     /**

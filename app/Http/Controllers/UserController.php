@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -46,7 +47,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('auth.profile', compact('user'));
     }
 
     /**
@@ -59,7 +60,7 @@ class UserController extends Controller
     {
         return view('auth.editUser', compact('user'));
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -69,7 +70,20 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $user = Auth::user();
+        $data = $request->all();
+        $user->update([
+            'name' => $data['name'],
+            'apellidoP' => $data['apellidoP'],
+            'apellidoM' => $data['apellidoM'],
+            'numTel' => $data['numTel'],
+            'numCel' => $data['numCel'],
+            'calle' => $data['calle'],
+            'colonia' => $data['colonia'],
+            'codPostal' => $data['codPostal']
+        ]);
+        // dd($user);
+        return redirect()->route('user.show', $user->id);
     }
 
     /**

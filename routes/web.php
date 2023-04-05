@@ -36,5 +36,6 @@ Route::get('/contacto', function () {
 })->name('contact');
 
 // Routes for user
-
+Route::get('/user/{id}/show', [App\Http\Controllers\UserController::class, 'show'])->name('user.show');
 Route::get('/user/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
+Route::put('/user/{id}/', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');

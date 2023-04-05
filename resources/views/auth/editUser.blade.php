@@ -9,9 +9,9 @@
                 <div class="card-header">Actualizar cuenta</div>
 
                 <div class="card-body">
-                    <form action="POST" action="#">
+                    <form method="POST" action=" {{ route('user.update', Auth::user()->id) }} ">
                         @csrf
-
+                        @method("PUT")
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">Nombre</label>
 
@@ -125,6 +125,14 @@
                                 @enderror -->
                             </div>
                             
+                        </div>
+
+                        <div class="row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Confirmar cambios
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -19,9 +19,19 @@ class Service extends Model
         'horaInicio',
         'horaFin',
         'duracion',
+        'user_id',
         // 'precioBase',
         // 'descuento',
         // 'stock',
         // 'image'
     ];
+
+    /**
+     * Get the user that owns the Service
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

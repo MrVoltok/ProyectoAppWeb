@@ -67,7 +67,7 @@ class ServiceController extends Controller
         $service->name = $name;
         $service->horaFin = $horaFin->format('H:i');
         $service->duracion = $duracion;
-        Service::create([
+        auth()->user()->services()->create([
             'name' => $service->name,
             'horaInicio' => $service->horaInicio,
             'horaFin' => $service->horaFin,

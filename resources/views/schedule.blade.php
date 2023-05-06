@@ -42,7 +42,7 @@
                 <h3 class="event-title">{{ $service->name }}</h3>
               </div>
               <div class="event-time">
-                <span class="event-time"></span>
+                <span class="event-time">{{ $service->horaInicio }} - {{ $service->horaFin }}</span>
               </div>
               <i class="fa-solid fa-trash"></i>
             </div>

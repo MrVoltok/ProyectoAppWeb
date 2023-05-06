@@ -13,9 +13,10 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <script src="https://kit.fontawesome.com/27a5eb0b96.js" crossorigin="anonymous"></script>
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -36,7 +37,7 @@
                         <li><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{ url('/servicios') }}">Servicios</a></li>
                         <li><a href="{{ url('/products/index') }}">Productos</a></li>
-                        <li><a href="#">¡Agenda una cita!</a></li>
+                        <li><a href="{{ route('schedule') }}">¡Agenda una cita!</a></li>
                         <li><a href="{{ url('/contacto') }}">Contacto</a></li>
                         <li><a href="#">Nosotros</a></li>
                     </ul>

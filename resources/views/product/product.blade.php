@@ -10,7 +10,7 @@
                     <div class="icon">
                         <i class="fa-regular fa-heart"></i>
                     </div>
-                    <img src="../img/product_1.jpg" alt="">
+                    <img src="../img/{{ $products[$i]->image }}.jpg" alt="">
                     <div class="product-info">
                         <p class="product-name">{{ $products[$i]->name }}</p>
                         <p class="price">${{ $products[$i]->precio }}</p>

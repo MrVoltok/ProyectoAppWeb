@@ -39,3 +39,7 @@ Route::get('/contacto', function () {
 Route::get('/user/{id}/show', [App\Http\Controllers\UserController::class, 'show'])->name('user.show');
 Route::get('/user/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
 Route::put('/user/{id}/', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
+
+// Route for task
+Route::get('/agenda', [App\Http\Controllers\ServiceController::class,'index'])->name('schedule');
+Route::post('/agenda/create', [App\Http\Controllers\ServiceController::class,'store'])->name('schedule.store');

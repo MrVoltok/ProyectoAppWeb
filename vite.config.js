@@ -8,6 +8,8 @@ export default defineConfig({
                 'resources/sass/app.scss',
                 'resources/js/app.js',
                 'resources/js/maps.js',
+                'resources/js/day.js',
+                'resources/js/script.js',
                 'resources/img/,'
             ],
             refresh: true,

@@ -36,6 +36,7 @@ class ProductController extends Controller
             $product->codigoColor = $productData['codigoColor'];
             $product->precio = $productData['precio'];
             $product->stock = $productData['stock'];
+            $product->image = $productData['image'];
             $product->save();
         }
 

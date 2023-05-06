@@ -5,7 +5,8 @@
         "marca": "L'OREAL",
         "codigoColor": "0-0",
         "precio": 50,
-        "stock": 30
+        "stock": 30,
+        "image": "product_1"
     },
     {
         "name": "Tinte Koleston",
@@ -13,7 +14,8 @@
         "marca": "Koleston",
         "codigoColor": "466",
         "precio": 24.90,
-        "stock": 10
+        "stock": 10,
+        "image": "product_4"
     },
     {
         "name": "Tinte Palette",
@@ -21,7 +23,8 @@
         "marca": "Palette",
         "codigoColor": "7-55",
         "precio": 24.90,
-        "stock": 25
+        "stock": 25,
+        "image": "product_5"
     },
     {
         "name": "Tinte Palette",
@@ -29,7 +32,8 @@
         "marca": "Palette",
         "codigoColor": "7-65",
         "precio": 24.90,
-        "stock": 16
+        "stock": 16,
+        "image": "product_6"
     },
     {
         "name": "Tinte L'OREAL",
@@ -37,7 +41,8 @@
         "marca": "L'OREAL",
         "codigoColor": "0-0",
         "precio": 50,
-        "stock": 30
+        "stock": 30,
+        "image": "product_4"
     },
     {
         "name": "Tinte L'OREAL",
@@ -45,6 +50,7 @@
         "marca": "L'OREAL",
         "codigoColor": "0-0",
         "precio": 50,
-        "stock": 30
+        "stock": 30,
+        "image": "product_5"
     }
 ]

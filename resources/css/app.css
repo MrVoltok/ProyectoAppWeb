@@ -59,10 +59,9 @@
 }
 
 .home .home-content .text-1{
-    font-size: 75px;
-    font-weight: 600;
-    margin-left: -3px;
-    color: #C080FF; /* #B3A46B */
+    font-size: 100px;
+    font-weight: 800;
+    color: #8568E8; /* #B3A46B */
     text-shadow: 1px 1px black;
 }
 

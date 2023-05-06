@@ -19,6 +19,6 @@
         <div id="map"></div>
     </div>
 </section>
-<script src="{{ asset('js/map.js') }}"></script>
+<script src="{{ asset('js/maps.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 @endsection

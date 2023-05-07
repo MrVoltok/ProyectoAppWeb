@@ -31,9 +31,11 @@ Route::get('/servicios', function () {
     return view('services');
 })->name('service');
 
+// Routes for contactUs
 Route::get('/contacto', function () {
     return view('contact');
 })->name('contact');
+Route::post('/contacto/create/', [App\Http\Controllers\SuggestController::class, 'store'])->name('suggest.create');
 
 // Routes for user
 Route::get('/user/{id}/show', [App\Http\Controllers\UserController::class, 'show'])->name('user.show');

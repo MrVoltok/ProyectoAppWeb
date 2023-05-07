@@ -22,10 +22,13 @@
         <section class="suggest-box">
             <h2>¡Nos interesa su opinion!</h2>
             <div class="suggest">
-                <textarea name="suggest" id="suggest" placeholder="Escriba sus opiniones y sugerencias."></textarea>
-                <div class="send-suggest">
-                    <button class="btn btn-primary">Enviar comentario</button>
-                </div>
+                <form action="{{ route('suggest.create') }}" method="post">
+                    @csrf
+                    <textarea name="comment" id="suggest" placeholder="Escriba sus opiniones y sugerencias."></textarea>
+                    <div class="send-suggest">
+                        <button class="btn btn-primary" type="submit">Enviar comentario</button>
+                    </div>
+                </form>
             </div>
         </section>
     </div>

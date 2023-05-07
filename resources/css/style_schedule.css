@@ -215,66 +215,62 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  padding-left: 4px;
+  border: 1px solid var(--primary-clr);
+  border-radius: 5px;
+  background: #e6e6e6;
 }
-.events .event {
-  margin-top: 0.2rem;
-  position: relative;
-  width: 95%;
+
+.events .event{
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  padding: 0 20px;
-  padding-left: 50px;
-  color: #fff;
-  border: 1px solid black;
-  cursor: pointer;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  color: #373c4f;
 }
 .events .event:hover{
-  border: 1px solid black;
-  background: #e2e2e2;
+  background: var(--primary-clr);
+  color: #fff;
 }
-.events .event .title {
+
+.events .event .event-data{
   display: flex;
   align-items: center;
-  pointer-events: none;
+  padding: 0 0.5rem;
 }
-.events .event .title .event-title {
+
+.events .event .event-data .event-time{
+  border-right: 2px solid var(--primary-clr);
+  padding-right: 0.5rem;
+  margin-right: 0.5rem;
+}
+.events .event:hover .event-data .event-time{
+  border-right: 1px solid #fff;
+}
+
+.events .event .event-data .title{
+  font-weight: 600;
+}
+
+.events .event .event-delete{
+  display: flex;
+  align-items: center;
+}
+
+.events .event .event-delete button{
+  background: none;
+  border: none;
+}
+
+.events .event .event-delete i{
   font-size: 1rem;
-  font-weight: 400;
-  margin-left: 20px;
-  color: var(--primary-clr);
+  /* display: none; */
 }
-.events .event i {
-  color: var(--primary-clr);
-  font-size: 0.5rem;
+
+.events .event .event-delete i:hover{
+  cursor: pointer;
+  color: #fff;
+  /* display: block; */
 }
-.events .event .event-time {
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: #878895;
-  margin-left: 15px;
-  pointer-events: none;
-}
-/* add tick in event after */
-/* .events .event::after {
-  content: "✓";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  font-size: 3rem;
-  line-height: 1;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.3;
-  color: var(--primary-clr);
-  transform: translateY(-50%);
-}
-.events .event:hover::after {
-  display: flex;
-} */
+
 .add-event {
   position: absolute;
   bottom: 30px;
@@ -302,6 +298,7 @@
   width: 100%;
   height: 100%;
   display: flex;
+  margin: 1rem;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;

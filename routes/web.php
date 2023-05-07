@@ -43,3 +43,4 @@ Route::put('/user/{id}/', [App\Http\Controllers\UserController::class, 'update']
 // Route for task
 Route::get('/agenda', [App\Http\Controllers\ServiceController::class,'index'])->name('schedule');
 Route::post('/agenda/create', [App\Http\Controllers\ServiceController::class,'store'])->name('schedule.store');
+Route::delete('/agenda/{service}/',[App\Http\Controllers\ServiceController::class,'destroy'])->name('schedule.destroy');

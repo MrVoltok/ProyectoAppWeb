@@ -37,14 +37,23 @@
           <!-- LISTA DE RESERVACIONES -->
           @forelse($services as $service)
             <div class="event">
-              <div class="title">
-                <i class="fas fa-circle"></i>
-                <h3 class="event-title">{{ $service->name }}</h3>
+              <div class="event-data">
+                <div class="event-time">
+                  <span class="event-time-text">{{ $service->horaInicio }} - {{ $service->horaFin }}</span>
+                </div>
+                <div class="title">
+                  <span class="event-title-text">{{ $service->name }}</span>
+                </div>
               </div>
-              <div class="event-time">
-                <span class="event-time">{{ $service->horaInicio }} - {{ $service->horaFin }}</span>
+              <div class="event-delete">
+                <form action="{{ route('schedule.destroy', $service->id) }}" method="post">
+                  @csrf
+                  @method("DELETE")
+                  <button type="submit">
+                    <i class="fa-solid fa-x"></i>
+                  </button>
+                </form>
               </div>
-              <i class="fa-solid fa-trash"></i>
             </div>
           @empty
             <div class="no-event">

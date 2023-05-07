@@ -20,10 +20,8 @@ class Service extends Model
         'horaFin',
         'duracion',
         'user_id',
-        // 'precioBase',
+        // 'precio',
         // 'descuento',
-        // 'stock',
-        // 'image'
     ];
 
     /**

@@ -1,22 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="contact-content pad-sect">
-    <div>
-        <div class="contact-info">
-            <div>
-                <h1>¡Contáctanos!</h1>
-                <h3 class="contact-subtitle">Dirección:</h3>
-                <p class="contact-address">Avenida San Claudio, Blvrd 14 Sur</p>
-                <p class="contact-address">Cdad. Universitaria, 72592 Puebla, Pue.</p>
-                <h3 class="contact-subtitle">Correo:</h3>
-                <p class="contact-email">chez.tuli@correo.com</p>
-                <h3 class="contact-subtitle">Teléfono:</h3>
-                <p class="contact-tel">222 *** ****</p>
-                <p class="contact-tel">222 *** ****</p>
+<section class="contact-content">
+    <div class="container">
+        <div class="contact-info d-flex">
+            <div class="contact-data">
+                <div>
+                    <h1>¡Contáctanos!</h1>
+                    <h3 class="contact-subtitle">Dirección:</h3>
+                    <p class="contact-address">Avenida San Claudio, Blvrd 14 Sur</p>
+                    <p class="contact-address">Ciudad. Universitaria, 72592 Puebla, Pue.</p>
+                    <h3 class="contact-subtitle">Correo:</h3>
+                    <p class="contact-email">chez.tuli@correo.com</p>
+                    <h3 class="contact-subtitle">Teléfono:</h3>
+                    <p class="contact-tel">222 *** ****</p>
+                    <p class="contact-tel">222 *** ****</p>
+                </div>
             </div>
+            <div id="map"></div>
         </div>
-        <div id="map"></div>
+        <section class="suggest-box">
+            <h2>¡Nos interesa su opinion!</h2>
+            <div class="suggest">
+                <textarea name="suggest" id="suggest" placeholder="Escriba sus opiniones y sugerencias."></textarea>
+                <div class="send-suggest">
+                    <button class="btn btn-primary">Enviar comentario</button>
+                </div>
+            </div>
+        </section>
     </div>
 </section>
 <script src="{{ asset('js/maps.js') }}"></script>

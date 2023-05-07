@@ -1,37 +1,17 @@
 :root {
   --primary-clr: #b38add;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-/* nice scroll bar */
-::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  background: #f5f5f5;
-  border-radius: 50px;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--primary-clr);
-  border-radius: 50px;
-}
+
 .container-schedule {
+  font-family: "Poppins", sans-serif;
   position: relative;
-  width: 1200px;
-  margin: 0 auto;
-  padding-top: 6rem;
+  width: 100%;
   color: #fff;
   display: flex;
-
-  border-radius: 10px;
 }
 .left {
   width: 60%;
-  padding: 20px;
+  padding: 20px 10px 20px 20px;
 }
 .calendar {
   position: relative;
@@ -181,7 +161,7 @@
 .container-schedule .right {
   position: relative;
   width: 40%;
-  padding: 20px 0;
+  padding: 20px 20px 20px 10px;
 }
 
 .right .today-date {

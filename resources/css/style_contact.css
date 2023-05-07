@@ -1,32 +1,67 @@
 .contact-content div{
-    display: flex;
     padding: 1rem;
+}
+
+.contact-info{
     justify-content: space-between;
 }
 
-
-.contact-info div{
+.contact-data div{
     display: block;
     align-items: center;
 }
 
-.contact-info h1{
+.contact-data h1{
     margin-bottom: 1rem;
 }
 
-.contact-info .contact-subtitle{
+.contact-data .contact-subtitle{
     margin-top: 2rem;
 }
 
-.contact-info p{
+.contact-data p{
     font-weight: 400;
 }
 
-.contact-info .contact-address, .contact-tel, .contact-email{
+.contact-data .contact-address, .contact-tel, .contact-email{
     margin: 0.5rem 0;
 }
 
 #map {
 	height: 500px;
 	width: 50%;
+}
+
+.suggest-box{
+    padding: 1rem;
+}
+
+.suggest-box .suggest{
+    padding: 0;
+}
+
+.suggest-box .suggest textarea{
+    width: 100%;
+    max-height: 300px;
+    padding: 10px;
+    line-height: 30px;
+    border: 1px solid #b38add;
+}
+
+
+.suggest-box .suggest .send-suggest{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0;
+}
+
+@media (max-width: 991px) {
+    .contact-info{
+        flex-direction: column;
+    }
+
+    #map {
+        height: 500px;
+        width: 100%;
+    }
 }

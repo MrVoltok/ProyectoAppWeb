@@ -21,7 +21,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg shadow-sm">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="logo">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         Chez Tuli

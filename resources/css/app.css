@@ -5,10 +5,10 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: "Poppins", sans-serif;
 }
 
 .navbar{
-    position: fixed;
     width: 100%;
     padding: 15px 0;
     font-family: 'Ubuntu', sans-serif;
@@ -68,9 +68,4 @@
 .home .home-content .text-2{
     font-size: 40px;
     margin: 5px 0;
-}
-
-
-.pad-sect{
-    padding-top: 5rem;
 }

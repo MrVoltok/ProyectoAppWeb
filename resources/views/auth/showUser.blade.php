@@ -1,7 +1,7 @@
 @extends('layouts.navAdmin')
 
 @section('contentAdmin')
-<section class="container">
+<section class="profile-sect container">
     <div class="profile-section">
         <div class="personal-data-title">
             <h1>Datos personales</h1>

@@ -48,7 +48,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('auth.profile', compact('user'));
+        return view('auth.profile', compact('user'),['services'=>Service::all()]);
     }
 
     /**

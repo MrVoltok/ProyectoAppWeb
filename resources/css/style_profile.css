@@ -23,6 +23,7 @@
     margin-top: 1rem;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 1rem;
 }
 
 .profile-general-data{
@@ -39,3 +40,19 @@
     margin-top: 1.5rem;
 }
 .user-data:first-child{margin-top: 0px;}
+
+@media (max-width: 991px) {
+    .profile-section .data-section{
+        flex-direction: column;
+    }
+
+    .profile-general-data{
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .profile-additional-data{
+        display: flex;
+        justify-content: flex-start;
+    }
+}

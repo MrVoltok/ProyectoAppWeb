@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -15,7 +16,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('schedule', ['services' => Service::all()]);
+        // $userId = Auth::check() ? Auth::user()->id : null;
+        return view('schedule', ['services' => Service::all()]);//->with('userId',Auth::user()->id)
     }
 
     /**
@@ -29,6 +31,20 @@ class ServiceController extends Controller
     }
 
     /**
+     * Verifies if $horaInicio is between $horaApertura and $horaCierre
+     */
+    private function validateHour(Request $request){
+        
+        $horaInicio = Carbon::parse($request['horaInicio']);
+        $horaCierre = Carbon::parse('21:00:00');
+        $horaApertura = Carbon::parse('10:00:00');
+        
+        if ($horaInicio->greaterThan($horaCierre) || $horaInicio->lessThan($horaApertura)) {
+            return false;
+        }
+        return true;
+    }
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -36,15 +52,20 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
+        $this->validateHour($request);
+        if(!$this->validateHour($request)){
+            return redirect()->route('schedule');
+        }
+
         $service = new Service;
         $service->name = $request['service'];
         $service->horaInicio = $request['horaInicio'];
 
-        $aux;
-        $duracion;
         switch($request['service']){
             case 1:
                 $name = "Gel en uñas";
+                $precio = 180;
                 $duracion = 45;
                 $aux = Carbon::createFromFormat('H:i', $request['horaInicio']);
                 $horaFin = $aux->addMinutes($duracion);
@@ -52,6 +73,7 @@ class ServiceController extends Controller
 
             case 2:
                 $name = "Manicure";
+                $precio = 150;
                 $duracion = 30;
                 $aux = Carbon::createFromFormat('H:i', $request['horaInicio']);
                 $horaFin = $aux->addMinutes($duracion);
@@ -59,23 +81,28 @@ class ServiceController extends Controller
 
             case 3:
                 $name = "Tinte de cabello";
+                $precio = 580;
                 $duracion = 80;
                 $aux = Carbon::createFromFormat('H:i', $request['horaInicio']);
                 $horaFin = $aux->addMinutes($duracion);
                 break;
         }
         $service->name = $name;
+        $service->precio = $precio;
         $service->horaFin = $horaFin->format('H:i');
         $service->duracion = $duracion;
+        $service->dia = $request['dia'];
         auth()->user()->services()->create([
             'name' => $service->name,
             'horaInicio' => $service->horaInicio,
             'horaFin' => $service->horaFin,
             'duracion' => $service->duracion,
+            'precio' => $service->precio,
+            'dia' => $service->dia,
         ]);
         // $service = Service::all();
         /*
-        dd($service);
+        
         */
 
         return redirect()->route('schedule');

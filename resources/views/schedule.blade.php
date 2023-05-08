@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-schedule">
+<div class="container container-schedule">
       <div class="left">
         <div class="calendar">
           <div class="month">
@@ -36,28 +36,52 @@
         <div class="events">
           <!-- LISTA DE RESERVACIONES -->
           @forelse($services as $service)
-            <div class="event">
-              <div class="event-data">
-                <div class="event-time">
-                  <span class="event-time-text">{{ $service->horaInicio }} - {{ $service->horaFin }}</span>
-                </div>
-                <div class="title">
-                  <span class="event-title-text">{{ $service->name }}</span>
+            @if (!Auth::check())
+              <div class="event">
+                <div class="event-data">
+                  <div class="event-time">
+                    <span class="event-time-text">{{ $service->horaInicio }} - {{ $service->horaFin }}</span>
+                  </div>
+                  <div class="title">
+                    <span class="event-title-text">Servicio Reservado</span>
+                  </div>
                 </div>
               </div>
-              <div class="event-delete">
-                <form action="{{ route('schedule.destroy', $service->id) }}" method="post">
-                  @csrf
-                  @method("DELETE")
-                  <button type="submit">
-                    <i class="fa-solid fa-x"></i>
-                  </button>
-                </form>
+            @elseif ($service->user_id == Auth::user()->id)
+              <div class="event">
+                <div class="event-data">
+                  <div class="event-time">
+                    <span class="event-time-text">{{ $service->horaInicio }} - {{ $service->horaFin }}</span>
+                  </div>
+                  <div class="title">
+                    <span class="event-title-text">{{ $service->name }}</span>
+                  </div>
+                </div>
+                <div class="event-delete">
+                  <form action="{{ route('schedule.destroy', $service->id) }}" method="post">
+                    @csrf
+                    @method("DELETE")
+                    <button type="submit">
+                      <i class="fa-solid fa-x"></i>
+                    </button>
+                  </form>
+                </div>
               </div>
-            </div>
+              @else
+                <div class="event">
+                  <div class="event-data">
+                    <div class="event-time">
+                      <span class="event-time-text">{{ $service->horaInicio }} - {{ $service->horaFin }}</span>
+                    </div>
+                    <div class="title">
+                      <span class="event-title-text">Servicio Reservado</span>
+                    </div>
+                  </div>
+                </div>
+            @endif
           @empty
             <div class="no-event">
-              <h3>No se han apartado citas</h3>
+              <p>No se han apartado citas</p>
             </div>
           @endforelse
         </div>
@@ -83,7 +107,7 @@
                 <input type="time" class="event-timeInput" name="horaInicio">
               </div>
             </div>
-            <input type="hidden" value="">
+            <div class="hidden-dayValue"></div>
             <div class="add-event-footer">
               <button type="sumbit" class="add-event-btn">Agendar cita</button>
             </div>

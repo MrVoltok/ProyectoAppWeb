@@ -20,7 +20,8 @@ class Service extends Model
         'horaFin',
         'duracion',
         'user_id',
-        // 'precio',
+        'precio',
+        'dia',
         // 'descuento',
     ];
 

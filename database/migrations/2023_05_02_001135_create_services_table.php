@@ -20,6 +20,8 @@ return new class extends Migration
             $table->time('horaInicio');
             $table->time('horaFin');
             $table->integer('duracion');
+            $table->decimal('precio');
+            $table->tinyInteger('dia');
             $table->timestamps();
             $table->foreignIdFor(User::class);
         });

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->time('horaFin');
             $table->integer('duracion');
             $table->decimal('precio');
+            $table->decimal('precioTotal');
             $table->tinyInteger('dia');
             $table->timestamps();
             $table->foreignIdFor(User::class);

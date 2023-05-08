@@ -42,6 +42,14 @@ class ServiceController extends Controller
     }
 
     /**
+     * Checks user's status
+     */
+    private function checkUserStatus(Request $request){
+        if($request['status'] == "Cliente Frecuente")
+            return true;
+    }
+
+    /**
      * Verifies if $horaInicio is between $horaApertura and $horaCierre
      */
     private function validateHour(Request $request){
@@ -103,6 +111,13 @@ class ServiceController extends Controller
         $service->horaFin = $horaFin->format('H:i');
         $service->duracion = $duracion;
         $service->dia = $request['dia'];
+
+        if(!$this->checkUserStatus($request)){
+            $service->precioTotal = $precio;
+        }
+        $descuento = 0.1;
+        $service->precioTotal = $precio - ($precio * $descuento);
+
         auth()->user()->services()->create([
             'name' => $service->name,
             'horaInicio' => $service->horaInicio,
@@ -110,6 +125,7 @@ class ServiceController extends Controller
             'duracion' => $service->duracion,
             'precio' => $service->precio,
             'dia' => $service->dia,
+            'precioTotal' => $service->precioTotal,
         ]);
         // $service = Service::all();
         /*

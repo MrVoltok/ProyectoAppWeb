@@ -22,7 +22,7 @@ class Service extends Model
         'user_id',
         'precio',
         'dia',
-        // 'descuento',
+        'precioTotal',
     ];
 
     /**

@@ -39,7 +39,7 @@
                         <li><a href="{{ url('/products/index') }}">Productos</a></li>
                         <li><a href="{{ route('schedule') }}">¡Agenda una cita!</a></li>
                         <li><a href="{{ url('/contacto') }}">Contacto</a></li>
-                        <li><a href="#">Nosotros</a></li>
+                        {{-- <li><a href="#">Nosotros</a></li> --}}
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -67,6 +67,12 @@
                                     <a class="dropdown-item" href=" {{ route('user.show', Auth::user()->id) }}">
                                         Perfil
                                     </a>
+                                    
+                                    @if (Auth::user()->email == "victor@correo.com")
+                                        <a class="dropdown-item" href=" {{ route('adminPage') }}">
+                                            Panel de administrador
+                                        </a>
+                                    @endif
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

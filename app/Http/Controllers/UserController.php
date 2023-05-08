@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('auth.list.listUsers',['users' => User::all()]);
     }
 
     /**
@@ -48,6 +49,16 @@ class UserController extends Controller
     public function show(User $user)
     {
         return view('auth.profile', compact('user'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function showUser(User $user){
+        return view('auth.showUser', compact('user'), ['services'=>Service::all()]);
     }
 
     /**

@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('numTel')->nullable(false)->default('');
             $table->string('statusFreq')->nullable(false)->default('');
             $table->string('codPostal')->nullable(false)->default('');
+            $table->string('status')->nullable(false)->default('');
             $table->rememberToken();
             $table->timestamps();
         });

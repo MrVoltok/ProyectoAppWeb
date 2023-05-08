@@ -17,7 +17,18 @@ class ServiceController extends Controller
     public function index()
     {
         // $userId = Auth::check() ? Auth::user()->id : null;
-        return view('schedule', ['services' => Service::all()]);//->with('userId',Auth::user()->id)
+        return view('schedule', ['services' => Service::all()]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function list()
+    {
+        // $userId = Auth::check() ? Auth::user()->id : null;
+        return view('auth.list.listServices', ['services' => Service::all()]);
     }
 
     /**

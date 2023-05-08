@@ -56,6 +56,10 @@ class RegisterController extends Controller
         ]);
     }
 
+    private function setAdmin(array $data){
+        if($data['email'] == "victor@correo.com")
+            return true;
+    }
     /**
      * Create a new user instance after a valid registration.
      *
@@ -64,10 +68,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        if($this->setAdmin($data))
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'status' => "admin",
+            ]);
+        else
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'status' => "Cliente",
+            ]);
     }
 }

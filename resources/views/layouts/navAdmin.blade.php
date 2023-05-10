@@ -26,7 +26,7 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         Chez Tuli
                     </a>
-                    <h3 class="text-dark mt-2 bg-light rounded py-1 px-2">Admin Page</h3>
+                    <a href="{{route('adminPage')}}" class="text-decoration-none"><h3 class="text-dark mt-2 bg-light rounded py-1 px-2">Admin Page</h3></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

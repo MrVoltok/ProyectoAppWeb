@@ -28,6 +28,7 @@
                 @endforelse
             </tbody>
         </table>
+        {{ $users->links() }}
     </div>
 </section>
 @endsection

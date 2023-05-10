@@ -26,6 +26,7 @@
                 @endforelse
             </tbody>
         </table>
+        {{ $services->links() }}
     </div>
 </section>
 @endsection

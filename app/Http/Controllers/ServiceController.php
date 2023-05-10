@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ServiceController extends Controller
 {
@@ -16,7 +17,6 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        // $userId = Auth::check() ? Auth::user()->id : null;
         return view('schedule', ['services' => Service::all()]);
     }
 
@@ -28,7 +28,9 @@ class ServiceController extends Controller
     public function list()
     {
         // $userId = Auth::check() ? Auth::user()->id : null;
-        return view('auth.list.listServices', ['services' => Service::all()]);
+        // return view('auth.list.listServices', ['services' => Service::all()]);
+        $services = Service::with('user')->paginate(15);
+        return view('auth.list.listServices', compact('services'));
     }
 
     /**
@@ -71,7 +73,6 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         $this->validateHour($request);
         if(!$this->validateHour($request)){
             return redirect()->route('schedule');
@@ -127,10 +128,6 @@ class ServiceController extends Controller
             'dia' => $service->dia,
             'precioTotal' => $service->precioTotal,
         ]);
-        // $service = Service::all();
-        /*
-        
-        */
 
         return redirect()->route('schedule');
     }

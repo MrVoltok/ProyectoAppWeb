@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Suggest;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class SuggestController extends Controller
@@ -24,7 +25,7 @@ class SuggestController extends Controller
      */
     public function list()
     {
-        return view('auth.list.listSuggests', ['suggests' => Suggest::all()]);
+        return view('auth.list.listSuggests',  ['suggests' => DB::table('suggests')->paginate(15)]);
     }
 
     /**

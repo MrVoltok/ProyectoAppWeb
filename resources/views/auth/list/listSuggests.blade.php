@@ -20,6 +20,7 @@
                 @endforelse
             </tbody>
         </table>
+        {{ $suggests->links() }}
     </div>
 </section>
 @endsection

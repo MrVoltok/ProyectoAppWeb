@@ -1,66 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Web project - Beauty salon
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a school project for Web Applications Delevolpment course.
 
-## About Laravel
+This app was created for a client who wants to show its services and administraite its clients, products and services info.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Screenshot
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![](public/img/ScreenShot%20-%20home.png)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Development Setup
 
-## Learning Laravel
+### Table of contents
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   [Install required programs](#install-required-programs)
+-   [Clone program from GitHub](#clone-program-from-github)
+-   [Install Laravel dependencies](#install-laravel-dependencies)
+-   [Make migrations](#make-migrations)
+-   [Run progam](#run-program)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Install required programs
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+For start working with Laravel, you need to have installed PHP, Composer and Xampp on your PC. This project works with **PHP 8.2.0** and **Composer 2.5.2**.
 
-## Laravel Sponsors
+You can download PHP, Composer and Xampp by clicking the next links:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+-   [PHP](https://www.php.net/downloads.php)
+-   [Composer](https://getcomposer.org/)
+-   [Xampp](https://www.apachefriends.org/es/download.html)
 
-### Premium Partners
+## Clone program from GitHub
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+As you have installed the required programs, you need to open a terminal witch allows Git Bash\* and then, follow the next steps:
 
-## Contributing
+If you don't have Git installed, click [here](https://git-scm.com/downloads) for install it.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   Go to the folder where you will work with your code like:
 
-## Code of Conduct
+    ```bash
+    cd /project/
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-   Initialize Git
 
-## Security Vulnerabilities
+    ```bash
+    git init
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+-   Clone the repo into the project:
 
-## License
+    ```bash
+    git clone https://github.com/MrVoltok/ProyectoAppWeb.git
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    cd ProyectoAppWeb/
+    ```
+
+## Install Laravel dependencies
+
+### vendor and NodeJs
+
+When clonning the repo from github, it will not have **vendor** and **Node Js** folder. To get vendor folder and Node Js, open a terminal and write the next command:bash
+
+```bash
+composer install
+
+npm install
+```
+
+### env file
+
+When you clone a Laravel repo, the file _.env_ will no exist.
+To get .env file, just create a new file named _.env_ and copy the all the content from _.env.example_.
+
+When copying _.env_ content, you'll notice that APP_KEY value is empty. To get a new key, open a terminal and write the next command:
+
+```bash
+php artisan key:generate
+```
+
+## Make migrations
+
+Before running the program for first time, you need to migrate all the database into Mysql by writing the next command:
+
+```bash
+php artisan migrate
+```
+
+## Run program
+
+As you installed all the dependencies, you can run this program by following the next steps:
+
+-   Open a terminal and write the next command:
+    ```bash
+    php artisan serve
+    ```
+-   Open another terminal and write the next command:
+    ```bash
+    npm run dev
+    ```
